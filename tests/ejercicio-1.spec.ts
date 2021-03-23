@@ -8,12 +8,12 @@ import {Marvel} from '../src/ejercicio-1/marvel';
 import {DC} from '../src/ejercicio-1/dc';
 import {Encyclopedia} from '../src/ejercicio-1/encyclopedia';
 
-let Pikachu = new Pokemon('Pikachu', 6, 0.4, 'eléctrico', {total: 320, HP: 350, attack: 55, defense: 40, spatk: 50, spdef: 50, speed: 90}, "Pika pika!");
-let Saiyan = new DragonBall('Goku', 62, 175, {total: 390, HP: 370, attack: 58, defense: 60, spatk: 50, spdef: 50, speed: 90}, "Kaio-Ken!");
-let Chewbacca = new StarWars('Chewbacca', 150, 200, {total: 340, HP: 350, attack: 54, defense: 45, spatk: 50, spdef: 50, speed: 90}, "Grrrr...");
-let IronMan = new Marvel('Iron Man', 72, 172, {total: 350, HP: 320, attack: 57, defense: 47, spatk: 50, spdef: 50, speed: 90}, "Yo soy Iron Man!");
-let Batman = new DC('Batman', 84, 194, {total: 365, HP: 345, attack: 53, defense: 41, spatk: 50, spdef: 50, speed: 90}, "Soy Batman!");
-let Saiyan2 = new DragonBall('Vegeta', 62, 175, {total: 390, HP: 320, attack: 58, defense: 60, spatk: 50, spdef: 50, speed: 90}, "Kakaroto...");
+let Pikachu = new Pokemon('Pikachu', 6, 0.4, 'eléctrico', {total: 320, HP: 350, attack: 55, defense: 40, spatk: 50, spdef: 50, speed: 90}, "Pika pika!", ["Dragon Ball"], ["DC", "Star Wars"]);
+let Saiyan = new DragonBall('Goku', 62, 175, {total: 390, HP: 370, attack: 58, defense: 60, spatk: 50, spdef: 50, speed: 90}, "Kaio-Ken!", ["DC"], ["Marvel", "Pokemon"]);
+let Chewbacca = new StarWars('Chewbacca', 150, 200, {total: 340, HP: 350, attack: 54, defense: 45, spatk: 50, spdef: 50, speed: 90}, "Grrrr...", ["Dragon Ball"], ["Marvel", "Pokemon"]);
+let IronMan = new Marvel('Iron Man', 72, 172, {total: 350, HP: 320, attack: 57, defense: 47, spatk: 50, spdef: 50, speed: 90}, "Yo soy Iron Man!", ["DC"], ["Pokemon", "Star Wars"]);
+let Batman = new DC('Batman', 84, 194, {total: 365, HP: 345, attack: 53, defense: 41, spatk: 50, spdef: 50, speed: 90}, "Soy Batman!", ["Star Wars"], ["Dragon Ball", "Pokemon"]);
+let Saiyan2 = new DragonBall('Vegeta', 65, 170, {total: 390, HP: 320, attack: 58, defense: 60, spatk: 50, spdef: 50, speed: 90}, "Kakaroto...", ["DC"], ["Marvel", "Pokemon"]);
 
 let Combat1 = new Combat(Pikachu, Saiyan);
 let Combat2 = new Combat(Chewbacca, IronMan);
@@ -23,8 +23,8 @@ let Combat5 = new Combat(Saiyan, Saiyan2);
 let encyclopedia = new Encyclopedia([Pikachu, Saiyan, Chewbacca, IronMan, Batman]);
 
 describe('Exercise 1 tests', () => {
-    it('Combat between Pikachu and Goku --> Goku wins!', () => {
-       expect(Combat1.start()).to.be.equal('Goku wins!');
+    it('Combat between Pikachu and Goku --> Pikachu wins!', () => {
+       expect(Combat1.start()).to.be.equal('Pikachu wins!');
     });
     it('Combat between Chewbacca and Iron Man --> Chewbacca wins!', () => {
         expect(Combat2.start()).to.be.equal('Chewbacca wins!');

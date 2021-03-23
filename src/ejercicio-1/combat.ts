@@ -19,56 +19,9 @@ export class Combat {
      */
      damage(fighter1: Fighter, fighter2: Fighter) {
         let effectiveness: number;
-
-        switch (fighter1.getUniverse()) {
-            case fighter2.getUniverse():
-                effectiveness = 1;
-                break;
-
-            case 'Marvel':
-                if (fighter2.getUniverse() == 'DC') effectiveness = 2;
-                else if (fighter2.getUniverse() == 'Star Wars') effectiveness = 0.5;
-                else if (fighter2.getUniverse() == 'Dragon Ball') effectiveness = 1;
-                else if (fighter2.getUniverse() == 'Pokemon') effectiveness = 1.5;
-                else effectiveness = 0;
-                break;
-
-            case 'DC':
-                if (fighter2.getUniverse() == 'Marvel') effectiveness = 0.5;
-                else if (fighter2.getUniverse() == 'Star Wars') effectiveness = 2;
-                else if (fighter2.getUniverse() == 'Dragon Ball') effectiveness = 1.5;
-                else if (fighter2.getUniverse() == 'Pokemon') effectiveness = 1;
-                else effectiveness = 0;
-                break;
-
-            case 'Pokemon':
-                if (fighter2.getUniverse() == 'DC') effectiveness = 1;
-                else if (fighter2.getUniverse() == 'Star Wars') effectiveness = 1.5;
-                else if (fighter2.getUniverse() == 'Dragon Ball') effectiveness = 2;
-                else if (fighter2.getUniverse() == 'Marvel') effectiveness = 0.5;
-                else effectiveness = 0;
-                break;
-
-            case 'Dragon Ball':
-                if (fighter2.getUniverse() == 'DC') effectiveness = 2;
-                else if (fighter2.getUniverse() == 'Star Wars') effectiveness = 0.5;
-                else if (fighter2.getUniverse() == 'Marvel') effectiveness = 1;
-                else if (fighter2.getUniverse() == 'Pokemon') effectiveness = 1.5;
-                else effectiveness = 0;
-                break;
-
-            case 'Star Wars':
-                if (fighter2.getUniverse() == 'DC') effectiveness = 1;
-                else if (fighter2.getUniverse() == 'Marvel') effectiveness = 1.5;
-                else if (fighter2.getUniverse() == 'Dragon Ball') effectiveness = 2;
-                else if (fighter2.getUniverse() == 'Pokemon') effectiveness = 0.5;
-                else effectiveness = 0;
-                break;
-
-            default:
-                effectiveness = 0;
-                break;
-        }
+        if (fighter1.getStrongerThan().includes(fighter2.getUniverse())) effectiveness = 2;
+        else if ((fighter1.getEqualStrong().includes(fighter2.getUniverse())) || (fighter1.getUniverse() == fighter2.getUniverse())) effectiveness = 1;
+        else effectiveness = 0.5;
         return (50 * (fighter1.getStats().attack/fighter2.getStats().defense) * effectiveness);
     }
 
