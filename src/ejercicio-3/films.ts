@@ -1,18 +1,19 @@
 import {BasicStreamableCollection} from "./basic";
 
-export type documentary = {
+export type film = {
     title: string;
     year: number;
     duration: number;
     genre: string;
 }
-export class Documentaries extends BasicStreamableCollection<documentary> {
-    constructor(protected items: documentary[]) {
+
+export class Films extends BasicStreamableCollection<film> {
+    constructor(protected items: film[]) {
         super(items);
       }
 
     searchBy(param: string, value: string) {
-        let result: documentary[] = [];
+        let result: film[] = [];
         switch (param) {
             case ('title'):
                 result = this.getItems().filter((x) => (x.title == value));

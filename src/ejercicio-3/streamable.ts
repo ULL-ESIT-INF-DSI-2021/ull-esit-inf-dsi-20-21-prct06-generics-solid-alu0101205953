@@ -1,7 +1,6 @@
 export interface Streamable<T> {
-    title: string;
-    year: number;
-    searchByName(name: string): T[];
-    searchByYear(year: number): T[];
-
+    searchBy(param: string, value: string): T[];
+    addItem(newItem: T): void;
+    getItems(): T[];
+    getNumberOfItems(): number;
 }
