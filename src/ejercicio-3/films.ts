@@ -18,6 +18,10 @@ export type film = {
  * Class that represents a collection of films
  */
 export class Films extends BasicStreamableCollection<film> {
+    /**
+     * Creates a new instance of a collection
+     * @param items Collection of films
+     */
     constructor(protected items: film[]) {
         super(items);
       }

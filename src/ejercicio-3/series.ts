@@ -20,6 +20,10 @@ export type serie = {
  * Class that represents a collection of series
  */
 export class Series extends BasicStreamableCollection<serie> {
+    /**
+     * Creates a new instance of a collection
+     * @param items Collection of series
+     */
     constructor(protected items: serie[]) {
         super(items);
       }
