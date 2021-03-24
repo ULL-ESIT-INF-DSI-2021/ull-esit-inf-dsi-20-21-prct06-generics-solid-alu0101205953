@@ -1,16 +1,32 @@
 import {BasicStreamableCollection} from "./basic";
 
+/**
+ * Attributes that a documentary has
+ * @param title Title of the documentary
+ * @param year Year when it was released
+ * @param duration How much time it lasts
+ * @param genre Genre of the documentary
+ */
 export type documentary = {
     title: string;
     year: number;
     duration: number;
     genre: string;
 }
+
+/**
+ * Class that represents a collection of documentaries
+ */
 export class Documentaries extends BasicStreamableCollection<documentary> {
     constructor(protected items: documentary[]) {
         super(items);
       }
 
+    /**
+     * Allows to search items by a value like title, year, etc.
+     * @param param The parameter you want to search by
+     * @param value The value of the parameter
+     */
     searchBy(param: string, value: string) {
         let result: documentary[] = [];
         switch (param) {
@@ -36,6 +52,9 @@ export class Documentaries extends BasicStreamableCollection<documentary> {
         }
     }
 
+    /**
+     * Returns the collection
+     */
     getItems() {
         return this.items;
     }

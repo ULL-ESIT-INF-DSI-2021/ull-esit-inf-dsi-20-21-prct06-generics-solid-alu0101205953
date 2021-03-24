@@ -1,5 +1,13 @@
 import {BasicStreamableCollection} from "./basic";
 
+/**
+ * Attributes that a serie has
+ * @param title Title of the serie
+ * @param year Year when it was released
+ * @param seasons How many seasons it has
+ * @param episodes How many episodes it has
+ * @param genre Genre of the serie
+ */
 export type serie = {
     title: string;
     year: number;
@@ -7,11 +15,20 @@ export type serie = {
     episodes: number;
     genre: string;
 }
+
+/**
+ * Class that represents a collection of series
+ */
 export class Series extends BasicStreamableCollection<serie> {
     constructor(protected items: serie[]) {
         super(items);
       }
 
+    /**
+     * Allows to search items by a value like title, year, etc.
+     * @param param The parameter you want to search by
+     * @param value The value of the parameter
+     */
     searchBy(param: string, value: string) {
         let result: serie[] = [];
         switch (param) {
@@ -41,6 +58,9 @@ export class Series extends BasicStreamableCollection<serie> {
         }
     }
 
+     /**
+     * Returns the collection
+     */
     getItems() {
         return this.items;
     }

@@ -1,5 +1,12 @@
 import {BasicStreamableCollection} from "./basic";
 
+/**
+ * Attributes that a film has
+ * @param title Title of the film
+ * @param year Year when it was released
+ * @param duration How much time it lasts
+ * @param genre Genre of the film
+ */
 export type film = {
     title: string;
     year: number;
@@ -7,11 +14,19 @@ export type film = {
     genre: string;
 }
 
+/**
+ * Class that represents a collection of films
+ */
 export class Films extends BasicStreamableCollection<film> {
     constructor(protected items: film[]) {
         super(items);
       }
 
+    /**
+     * Allows to search items by a value like title, year, etc.
+     * @param param The parameter you want to search by
+     * @param value The value of the parameter
+     */
     searchBy(param: string, value: string) {
         let result: film[] = [];
         switch (param) {
@@ -37,6 +52,9 @@ export class Films extends BasicStreamableCollection<film> {
         }
     }
 
+     /**
+     * Returns the collection
+     */
     getItems() {
         return this.items;
     }
