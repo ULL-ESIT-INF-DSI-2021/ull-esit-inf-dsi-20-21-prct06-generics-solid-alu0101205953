@@ -8,8 +8,20 @@
       "./src/ejercicio-1/marvel.ts",
       "./src/ejercicio-1/pokemon.ts",
       "./src/ejercicio-1/starwars.ts",
-      "./src/ejercicio-2/article.ts",
-      "./src/ejercicio-3/vehicles.ts"
+      "./src/ejercicio-2/convertible.ts",
+      "./src/ejercicio-2/length.ts",
+      "./src/ejercicio-2/mass.ts",
+      "./src/ejercicio-2/speed.ts",
+      "./src/ejercicio-2/strength.ts",
+      "./src/ejercicio-2/temperature.ts",
+      "./src/ejercicio-2/time.ts",
+      "./src/ejercicio-2/volume.ts",
+      "./src/ejercicio-3/basic.ts",
+      "./src/ejercicio-3/documentaries.ts",
+      "./src/ejercicio-3/films.ts",
+      "./src/ejercicio-3/searchable.ts",
+      "./src/ejercicio-3/series.ts",
+      "./src/ejercicio-3/streamable.ts"
     ],
     "out": "./docs"
   }
